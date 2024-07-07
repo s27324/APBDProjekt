@@ -70,7 +70,7 @@ public class ClientService: IClientService
         switch (emailAddressDecision)
         {
             case -1:
-                throw new Exception("Error: Email is invalid. Please remember about @somemail.someending");
+                throw new Exception("Error: Email is invalid. Please remember about @somemail.someending.");
             case -2:
                 throw new Exception("Error: Email address cannot be empty.");
         }
@@ -195,7 +195,7 @@ public class ClientService: IClientService
             throw new Exception("Error: Transaction rollbacked.");
         }
 
-        return $"Succesffully added new company client with id {resultOfTrans}";
+        return $"Succesffully added new company client with id {resultOfTrans}.";
     }
 
     

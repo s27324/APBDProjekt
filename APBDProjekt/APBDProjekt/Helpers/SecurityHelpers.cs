@@ -61,9 +61,9 @@ public static class SecurityHelpers
                 ValidateIssuer = true,
                 ValidateActor = true,
                 ClockSkew = TimeSpan.FromMinutes(2),
-                ValidIssuer = "https://localhost:5001", //should come from configuration
-                ValidAudience = "https://localhost:5001", //should come from configuration
-                ValidateLifetime = false, // We don't validate lifetime
+                ValidIssuer = "https://localhost:5001", 
+                ValidAudience = "https://localhost:5001", 
+                ValidateLifetime = false, 
                 IssuerSigningKey =
                     new SymmetricSecurityKey(
                         Encoding.UTF8.GetBytes(secret)

@@ -92,7 +92,7 @@ namespace APBDProjekt.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(8,2)", precision: 8, scale: 2, nullable: false)
+                    Price = table.Column<decimal>(type: "decimal(12,2)", precision: 12, scale: 2, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -248,8 +248,8 @@ namespace APBDProjekt.Migrations
                 {
                     ContractId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CurrentCharge = table.Column<decimal>(type: "decimal(8,2)", precision: 8, scale: 2, nullable: false),
-                    MaxCharge = table.Column<decimal>(type: "decimal(8,2)", precision: 8, scale: 2, nullable: false),
+                    CurrentCharge = table.Column<decimal>(type: "decimal(12,2)", precision: 12, scale: 2, nullable: false),
+                    MaxCharge = table.Column<decimal>(type: "decimal(12,2)", precision: 12, scale: 2, nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsSigned = table.Column<bool>(type: "bit", nullable: false),
@@ -362,14 +362,14 @@ namespace APBDProjekt.Migrations
                 columns: new[] { "ClientId", "Address", "CompanyId", "Email", "IsDeleted", "PhoneNumber", "PrivateClientId" },
                 values: new object[,]
                 {
-                    { 1, "ul. Chmiel 47c - Zgierz, LU / 65-239", null, "doe@gmail.com", false, "+48 543772365", 1 },
+                    { 1, "ul. Chmiel 47c - Zgierz, LU / 65-239", null, "doe@gmail.com", true, "+48 543772365", 1 },
                     { 2, "ul. Cybulski 81 - Ścinawa, PK / 74-648", null, "marltom@gmail.com", false, "+1 9792862590", 2 },
                     { 3, "ul. Śliwa 4/1 - Wieruszów, LU / 99-878", null, "soniaduda@gmail.com", false, "+48 852951976", 3 },
                     { 4, "al. Kostrzewa 270 - Lipiany, LB / 71-013", null, "tadbaran@gmail.com", false, "+48 904095402", 4 },
                     { 5, "pl. Szczepański 32c - Jeziorany, KP / 52-673", 1, "dir@cashzo.com", false, "+48 802107161", null },
                     { 6, "pl. Turek 05c - Polanów, ZP / 07-186", 2, "info@mathico.com", false, "+48 209770172", null },
                     { 7, "42 Ockham Road - East Witton, DL8 8TU", 3, "sales@lingify.uk", false, "+44 7994365813", null },
-                    { 8, "pl. Molenda 42c - Gdynia, LD / 86-752", 4, "fotofuse@gmail.com", true, "+48 517455585", null }
+                    { 8, "pl. Molenda 42c - Gdynia, LD / 86-752", 4, "fotofuse@gmail.com", false, "+48 517455585", null }
                 });
 
             migrationBuilder.InsertData(

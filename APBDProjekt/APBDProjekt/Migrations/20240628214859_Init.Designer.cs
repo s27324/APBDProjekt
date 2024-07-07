@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APBDProjekt.Migrations
 {
     [DbContext(typeof(SoftwareDistributionDbContext))]
-    [Migration("20240628154909_Init")]
+    [Migration("20240628214859_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -165,7 +165,7 @@ namespace APBDProjekt.Migrations
                             ClientId = 1,
                             Address = "ul. Chmiel 47c - Zgierz, LU / 65-239",
                             Email = "doe@gmail.com",
-                            IsDeleted = false,
+                            IsDeleted = true,
                             PhoneNumber = "+48 543772365",
                             PrivateClientId = 1
                         },
@@ -229,7 +229,7 @@ namespace APBDProjekt.Migrations
                             Address = "pl. Molenda 42c - Gdynia, LD / 86-752",
                             CompanyId = 4,
                             Email = "fotofuse@gmail.com",
-                            IsDeleted = true,
+                            IsDeleted = false,
                             PhoneNumber = "+48 517455585"
                         });
                 });
@@ -327,8 +327,8 @@ namespace APBDProjekt.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("CurrentCharge")
-                        .HasPrecision(8, 2)
-                        .HasColumnType("decimal(8,2)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
@@ -337,8 +337,8 @@ namespace APBDProjekt.Migrations
                         .HasColumnType("bit");
 
                     b.Property<decimal>("MaxCharge")
-                        .HasPrecision(8, 2)
-                        .HasColumnType("decimal(8,2)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.Property<int>("SoftwareSystemId")
                         .HasColumnType("int");
@@ -582,8 +582,8 @@ namespace APBDProjekt.Migrations
                         .HasColumnType("nvarchar(70)");
 
                     b.Property<decimal>("Price")
-                        .HasPrecision(8, 2)
-                        .HasColumnType("decimal(8,2)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.HasKey("SoftwareSystemId")
                         .HasName("SoftwareSystem_pk");
